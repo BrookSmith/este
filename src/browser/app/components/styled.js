@@ -18,7 +18,8 @@ const getPlatformType = (type) => {
         role="button"
         onKeyPress={e => {
           const isSpacebar = e.key === ' ';
-          if (!isSpacebar) return;
+          const isEnter = e.key === 'Enter';
+          if (!isSpacebar && !isEnter) return;
           e.preventDefault();
           if (typeof props.onClick !== 'function') return;
           props.onClick(e);
