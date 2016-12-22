@@ -2930,6 +2930,10 @@ fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.5:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+fela-native@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/fela-native/-/fela-native-4.1.1.tgz#c6492123d8ff973c747ae74a90399430c7b65955"
+
 fela-plugin-logger@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/fela-plugin-logger/-/fela-plugin-logger-4.1.1.tgz#50596fab6fb8622aaf72a1f78005d5d37a7bd424"
