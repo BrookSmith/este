@@ -14,7 +14,6 @@ const Button: Styled<ButtonProps> = styled((theme, props) => ({
   borderRadius: props.borderRadius || theme.border.radius,
   color: props.color ? theme.colors[props.color] : theme.colors.white,
   cursor: 'pointer',
-  userSelect: 'none',
   ...(props.disabled ? theme.states.disabled : {}),
 }), 'button', [
   'disabled',
@@ -24,6 +23,7 @@ const Button: Styled<ButtonProps> = styled((theme, props) => ({
 Button.defaultProps = ({
   backgroundColor: 'primary',
   bold: true,
+  selectable: false,
   display: 'inline-block',
   marginVertical: 1 / 4,
   paddingHorizontal: 1,

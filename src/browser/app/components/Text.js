@@ -20,6 +20,8 @@ export type TextProps = BoxProps & {
   decoration?: TextDecoration,
   size?: number,
   transform?: TextTransform,
+  // React native emulated props
+  selectable?: boolean,
   // Custom stuff.
   doNotFixFontSmoothing?: boolean,
 };
@@ -48,6 +50,12 @@ const fontSizeAndLineHeight = (typography, size) => {
   return { fontSize, lineHeight: `${lineHeight}px` };
 };
 
+const selectableState = selectable => {
+  if (selectable === true) return 'text';
+  if (selectable === false) return 'none';
+  return 'auto';
+};
+
 const Text: Styled<TextProps> = styled((theme, props) => ({
   $extends: Box,
   $map: maybeFixFontSmoothing(props.doNotFixFontSmoothing),
@@ -58,6 +66,7 @@ const Text: Styled<TextProps> = styled((theme, props) => ({
   textAlign: props.align || 'left',
   textDecoration: props.decoration || 'none',
   textTransform: props.transform || 'none',
+  userSelect: selectableState(props.selectable),
   ...fontSizeAndLineHeight(theme.typography, props.size),
 }), 'span');
 
