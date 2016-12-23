@@ -37,8 +37,8 @@ const maybeFixFontSmoothing = doNotFixFontSmoothing => style => {
   if (!hasColorAndBackgroundColor) return style;
   return {
     ...style,
-    MozOsxFontSmoothing: 'grayscale',
-    WebkitFontSmoothing: 'antialiased',
+    // TODO: MozOsxFontSmoothing: 'grayscale',
+    // TODO: WebkitFontSmoothing: 'antialiased',
   };
 };
 
@@ -47,7 +47,7 @@ const fontSizeAndLineHeight = (typography, size) => {
   const fontSize = typography.fontSize(size || 0);
   const lines = Math.ceil(fontSize / typography.lineHeight);
   const lineHeight = typography.lineHeight * lines;
-  return { fontSize, lineHeight: `${lineHeight}px` };
+  return { fontSize, lineHeight: lineHeight };
 };
 
 const selectableState = selectable => {
@@ -60,13 +60,13 @@ const Text: Styled<TextProps> = styled((theme, props) => ({
   $extends: Box,
   $map: maybeFixFontSmoothing(props.doNotFixFontSmoothing),
   color: props.color ? theme.colors[props.color] : theme.colors.black,
-  display: props.display || 'inline',
+  // TODO: display: props.display || 'inline',
   fontFamily: theme.text.fontFamily,
-  fontWeight: props.bold ? theme.text.bold : 'normal',
+  fontWeight: 'normal',
   textAlign: props.align || 'left',
-  textDecoration: props.decoration || 'none',
-  textTransform: props.transform || 'none',
-  userSelect: selectableState(props.selectable),
+  // TODO: textDecoration: props.decoration || 'none',
+  // TODO: textTransform: props.transform || 'none',
+  // TODO: userSelect: selectableState(props.selectable),
   ...fontSizeAndLineHeight(theme.typography, props.size),
 }), 'span');
 

@@ -25,7 +25,7 @@ const theme: Theme = {
   },
   states: {
     disabled: {
-      cursor: 'default',
+      // cursor: 'default',
       opacity: 0.5,
     },
   },

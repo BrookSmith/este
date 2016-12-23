@@ -3,6 +3,7 @@ import type { State } from '../../common/types';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import theme from './themes/initial';
+import WebButton from '../../browser/app/components/Button';
 import { Button, Text } from './components';
 import { Platform, StyleSheet, View } from 'react-native';
 import { appShowMenu } from '../../common/app/actions';
@@ -47,6 +48,27 @@ const Header = ({ menuShown, appShowMenu, title }) => (
       {/* This is a placeholder for the right side button. */}
       {/* <Icon name="ios-menu" style={styles.icon} /> */}
     </Button>
+    {['primary', 'success', 'warning', 'danger'].map(color => (
+      <WebButton
+        backgroundColor={color}
+        key={color}
+        title={color}
+        marginHorizontal={0.25}
+      />
+    ))}
+    <WebButton
+      backgroundColor="primary"
+      disabled
+      title="disabled"
+      marginHorizontal={0.25}
+    />
+    <WebButton
+      backgroundColor="transparent"
+      bold={false}
+      color="black"
+      title="black"
+      marginHorizontal={0.25}
+    />
   </View>
 );
 
